@@ -4,8 +4,8 @@
     <!-- 導航區 -->
     <div class="navigate">
       <RouterLink to="/home" active-class="xiaozhupeiqi">首頁</RouterLink>
-      <RouterLink :to="{name:'xinwen'}" active-class="xiaozhupeiqi">新聞</RouterLink>
-      <RouterLink :to="{path:'/about'}" active-class="xiaozhupeiqi">關於</RouterLink>
+      <RouterLink to="/news" active-class="xiaozhupeiqi">新聞</RouterLink>
+      <RouterLink to="/about" active-class="xiaozhupeiqi">關於</RouterLink>
     </div>
     <!-- 展示區 -->
     <div class="main-content">
