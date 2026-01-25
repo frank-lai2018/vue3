@@ -1,72 +1,52 @@
 <template>
-  <div class="app">
-    <h2 class="title">Vue路由測試</h2>
-    <!-- 導航區 -->
-    <div class="navigate">
-      <RouterLink to="/home" active-class="xiaozhupeiqi">首頁</RouterLink>
-      <RouterLink :to="{name:'xinwen'}" active-class="xiaozhupeiqi">新聞</RouterLink>
-      <RouterLink :to="{path:'/about'}" active-class="xiaozhupeiqi">關於</RouterLink>
-    </div>
-    <!-- 展示區 -->
-    <div class="main-content">
-      <RouterView></RouterView>
-    </div>
-  </div>
+	<div class="container-fluid wraper">
+		<h1 class="title">
+			Vue3 元件間通信
+		</h1>
+		<hr>
+		<div class="row">
+			<div class="col-xs-3 col-md-3 col-lg-3 col-xl-3">
+				<!-- 導航區 -->
+				<router-link active-class="active" class="list-group-item" to="/props">1. props</router-link>
+				<router-link active-class="active" class="list-group-item" to="/event">2. 自訂事件</router-link>
+				<router-link active-class="active" class="list-group-item" to="/mitt">3. mitt</router-link>
+				<router-link active-class="active" class="list-group-item" to="/model">4. v-model</router-link>
+				<router-link active-class="active" class="list-group-item" to="/attrs">5. $attrs</router-link>
+				<router-link active-class="active" class="list-group-item" to="/ref-parent">6. <span
+						class="small">$refs、$parent</span></router-link>
+				<router-link active-class="active" class="list-group-item" to="/provide-inject">7.
+					provide、inject</router-link>
+				<router-link active-class="active" class="list-group-item" to="/pinia">8. pinia</router-link>
+				<router-link active-class="active" class="list-group-item" to="/slot">9. slot</router-link>
+				<router-link active-class="active" class="list-group-item" to="/slotDefault">09_slot_默認插槽</router-link>
+				<router-link active-class="active" class="list-group-item" to="/slotName">09_slot_具名插槽</router-link>
+				<router-link active-class="active" class="list-group-item" to="/slotScope">09_slot_作用域插槽</router-link>
+			</div>
+			<div class="col-xs-9 col-md-9 col-lg-9 col-xl-9">
+				<div class="panel-body">
+					<!-- 佔位一個展示區 -->
+					<router-view></router-view>
+				</div>
+			</div>
+		</div>
+	</div>
 </template>
 
-<script lang="ts" setup name="App">
-import { RouterView, RouterLink } from 'vue-router'
-
+<script setup lang="ts" name="App">
 </script>
 
 <style>
-/* App */
-.title {
-  text-align: center;
-  word-spacing: 5px;
-  margin: 30px 0;
-  height: 70px;
-  line-height: 70px;
-  background-image: linear-gradient(45deg, gray, white);
-  border-radius: 10px;
-  box-shadow: 0 0 2px;
-  font-size: 30px;
+.wraper .title {
+	padding: 20px;
+	text-align: center;
+	min-width: 610px;
 }
 
-.navigate {
-  display: flex;
-  justify-content: space-around;
-  margin: 0 100px;
+.wraper .small {
+	font-size: 15px;
 }
 
-.navigate a {
-  display: block;
-  text-align: center;
-  width: 90px;
-  height: 40px;
-  line-height: 40px;
-  border-radius: 10px;
-  background-color: gray;
-  text-decoration: none;
-  color: white;
-  font-size: 18px;
-  letter-spacing: 5px;
-}
-
-.navigate a.xiaozhupeiqi {
-  background-color: #64967E;
-  color: #ffc268;
-  font-weight: 900;
-  text-shadow: 0 0 1px black;
-  font-family: 微軟雅黑;
-}
-
-.main-content {
-  margin: 0 auto;
-  margin-top: 30px;
-  border-radius: 10px;
-  width: 90%;
-  height: 400px;
-  border: 1px solid;
+.wraper .list-group-item {
+	min-width: 230px;
 }
 </style>
